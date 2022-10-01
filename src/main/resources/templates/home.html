@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <th:block>
+    <table>
+      <thead>
+        <tr>
+          <th>영화이름</th>
+          <th>감독</th>
+          <th>장르</th>
+        </tr>
+      </thead>
+      <tr th:each="movie:${movieList}">
+        <td th:text="${movie.movie_name}">영화이름</td>
+        <td th:text="${movie.director}">영화감독</td>
+        <td th:text="${movie.gerne}">영화장르</td>
+      </tr>
+    </table>
+  </th:block>
+</body>
+</html>
