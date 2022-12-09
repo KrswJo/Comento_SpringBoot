@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.comento_legacy2reorganization.Dao.StaticsMapper">
+    <select id="selectYearLoginList" resultType="hashMap" parameterType="string">
+        select *
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year};
+    </select>
+
+    <select id="selectYearLoginCnt" resultType="hashMap" parameterType="string">
+        select count(*) as totCnt
+        from statistc.requestinfo ri
+        where left(ri.createDate, 2) = #{year};
+    </select>
+</mapper>
